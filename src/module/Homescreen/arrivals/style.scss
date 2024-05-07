@@ -1,0 +1,47 @@
+@import "../../../styles/utils.scss";
+
+.arrivals {
+    width: 100%;
+    padding: 2%;
+
+    .title {
+        margin: 1.5rem 0 0.5rem 0;
+        text-align: center;
+        line-height: 30px;
+
+        span {
+            font-size: 3rem;
+            font-weight: 500;
+            color: $blackClr;
+        }
+
+        p {
+            color: lighten($color: $blackClr, $amount: 20);
+        }
+    }
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px 2rem;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1%;
+
+        button {
+            @include Button($blackClr, $whiteClr);
+        }
+    }
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* Mobile */

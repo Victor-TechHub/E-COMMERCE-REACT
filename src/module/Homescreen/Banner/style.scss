@@ -1,0 +1,121 @@
+@import "../../../styles/utils.scss";
+
+main {
+    overflow: hidden;
+
+    .banner {
+        width: 100dvw;
+        min-height: 100dvh;
+        background: linear-gradient(rgba(0, 0, 0, 0.571), rgba(0, 0, 0, 0.719)), url("../../../assets/store\ 2.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        object-fit: cover;
+
+        .container {
+
+            .hero-section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: calc(100dvh - 15.5dvh);
+                color: $whiteClr;
+                text-align: center;
+                gap: 1rem;
+
+                span {
+                    font-size: 6rem;
+                    padding-top: 10%;
+                }
+
+                p {
+                    text-wrap: wrap;
+                    line-height: 20px;
+                }
+
+                button {
+                    @include Button($whiteClr, $blackClr);
+                    margin: 15% 0 0 0;
+                }
+
+                button:hover {
+                    border: 1px solid $whiteClr;
+                    background: none;
+                    color: $whiteClr;
+                }
+            }
+        }
+    }
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+    from {
+        -moz-transform: translateX(200%);
+    }
+
+    to {
+        -moz-transform: translateX(-200%);
+    }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+    from {
+        -webkit-transform: translateX(200%);
+    }
+
+    to {
+        -webkit-transform: translateX(-200%);
+    }
+}
+
+@keyframes my-animation {
+    from {
+        -moz-transform: translateX(200%);
+        -webkit-transform: translateX(200%);
+        transform: translateX(200%);
+    }
+
+    to {
+        -moz-transform: translateX(-200%);
+        -webkit-transform: translateX(-200%);
+        transform: translateX(-200%);
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* MOBILE VIEW */
+@media screen and (max-width: 550px) {
+    .header {
+
+        .burger {
+            display: block !important;
+        }
+
+        .navigation {
+            background: rgba(255, 255, 255, 0.497);
+            position: absolute;
+            top: 5.5%;
+            width: 60%;
+            height: 94.5dvh;
+            left: 0;
+
+            ul {
+                flex-direction: column;
+            }
+        }
+
+        .left-wrapper {
+            flex-direction: column;
+            margin-top: 2%;
+        }
+    }
+
+    .hero-section {
+        opacity: 0;
+    }
+}

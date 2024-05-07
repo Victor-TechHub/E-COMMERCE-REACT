@@ -1,0 +1,64 @@
+@import "../../styles/utils.scss";
+
+.mainContainer {
+
+    .latest {
+        display: flex;
+        padding: 2%;
+        gap: 1rem;
+
+        .left {
+            img {
+                width: 100%;
+                height: 80%;
+                border-radius: 20px;
+                object-fit: cover;
+            }
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+
+            h3 {
+                font-size: 3rem;
+                font-weight: 500;
+            }
+
+            p {
+                color: lighten($color: $blackClr, $amount: 30);
+            }
+
+            span {
+                font-weight: 500;
+                font-size: 1.5rem;
+            }
+
+            b {
+                font-size: 4rem;
+                font-weight: 500;
+            }
+
+            button {
+                @include Button($blackClr, $whiteClr);
+                width: 40%;
+            }
+        }
+    }
+}
+
+// ////////////////////////////////////////////////////////////
+/* Mobile */
+
+@media screen and (max-width: 550px) {
+    .latest {
+        flex-direction: column-reverse;
+
+        .right {
+            button {
+                width: 100% !important;
+            }
+        }
+    }
+}

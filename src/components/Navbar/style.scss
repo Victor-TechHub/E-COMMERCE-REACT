@@ -1,0 +1,102 @@
+@import "../../styles/utils.scss";
+
+.main {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+
+    &.scrolled {
+        background: rgba(162, 159, 159, 0.685);
+        backdrop-filter: blur(5px);
+        transition: 1s;
+    }
+
+
+
+    .disclaimer {
+        height: 5.5dvh;
+        display: flex;
+        background: $whiteClr;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        overflow: hidden;
+
+        .scroll-text {
+            /* animation properties */
+            -moz-transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+
+            -moz-animation: my-animation 15s linear infinite;
+            -webkit-animation: my-animation 15s linear infinite;
+            animation: my-animation 15s linear infinite;
+        }
+
+        span {
+            background: $blackClr;
+            color: $whiteClr;
+            border-radius: 10px;
+            padding: 3px 10px;
+        }
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 1.5rem;
+        height: 10dvh;
+        // background: white;
+
+        .burger {
+            display: none;
+        }
+
+
+
+
+
+        .navigation {
+            ul {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                gap: 40px;
+
+                .logo {
+                    color: lighten($color: $whiteClr, $amount: 20);
+                    font-size: 2rem;
+                    font-weight: 500;
+                }
+            }
+
+            li {
+                color: $whiteClr;
+
+                &:hover {
+                    color: darken($color: $whiteClr, $amount: 20);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .left-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+
+            span {
+                display: flex;
+                align-items: center;
+                color: $whiteClr;
+                gap: 5px;
+
+                &:hover {
+                    color: darken($color: $whiteClr, $amount: 20);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
