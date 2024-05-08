@@ -26,7 +26,8 @@ const Navbar = () => {
                     <p className='scroll-text'>New Season Coming! Discount 10% for all products! Check out now <span>20:48</span></p>
                 </div>
 
-                <div className={`burger ${window.innerWidth < 600 ? "show" : "hide"} ${scroll > 0 ? "scrolled" : ""}`} onClick={handleClick}>
+                <div className={`burger ${window.innerWidth < 600 ? "show" : "hide"} ${scroll > 0 ? "scrolled" : ""}`}
+                    onClick={handleClick}>
                     {isOpen ? <CloseIcon style={{ color: "whitesmoke", scale: "1.5", cursor: "pointer" }} /> : <MenuRoundedIcon style={{ cursor: "pointer", color: "whitesmoke", scale: "1.5" }} />}
                 </div>
 
