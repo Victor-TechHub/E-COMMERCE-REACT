@@ -9,3 +9,11 @@ $blackClr: #1a1818;
     border-radius: 50px;
     cursor: pointer;
 }
+
+@mixin TextField {
+    padding: 10px;
+    border: 2px solid gainsboro;
+    border-radius: 20px;
+    outline: 0;
+    background: transparent;
+}

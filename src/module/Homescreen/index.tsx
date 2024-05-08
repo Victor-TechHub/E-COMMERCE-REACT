@@ -8,6 +8,7 @@ import Loader from '../../components/Loader'
 import store from "../../assets/store.jpg"
 import "./home.scss"
 import { ImgContainer, detailsContainer } from '../../utils/animation'
+import Footer from '../../components/Footer'
 
 const HomeScreen = () => {
     const { data: productsData, isLoading } = useQuery({
@@ -46,27 +47,46 @@ const HomeScreen = () => {
                             <button>See on Maps</button>
                         </motion.div>
                     </section>
+
                     <section className='collections'>
                         <h4>Featured Collections</h4>
                         <p>Dare to mix and match! Check our collections to level up your fashion game</p>
 
-                        <div className="wrapper">
+                        <motion.div
+                            variants={ImgContainer}
+                            initial="hidden"
+                            whileInView="show"
+                            className="wrapper">
                             <div className="col">
-                                <div className="row"></div>
-                                <div className="row"></div>
+                                <div className="row">
+                                    <span>Footwear</span>
+                                </div>
+                                <div className="row">
+                                    <span>Headwear</span>
+                                </div>
                             </div>
 
                             <div className="col">
-                                <div className="row"></div>
-                                <div className="row"></div>
+                                <div className="row">
+                                    <span>Jacket</span>
+                                </div>
+                                <div className="row">
+                                    <span>Bags</span>
+                                </div>
                             </div>
 
                             <div className="col">
-                                <div className="row"></div>
-                                <div className="row"></div>
+                                <div className="row">
+                                    <span>Accesories</span>
+                                </div>
+                                <div className="row">
+                                    <span>Bottoms</span>
+                                </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </section>
+
+                    <Footer />
                 </>
             )}
 

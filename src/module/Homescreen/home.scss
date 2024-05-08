@@ -46,6 +46,92 @@
             }
         }
     }
+
+    .collections {
+        text-align: center;
+        width: 100%;
+
+        h4 {
+            font-size: 3rem;
+            font-weight: 500;
+        }
+
+        p {
+            color: lighten($color: $blackClr, $amount: 30);
+        }
+
+        .wrapper {
+            margin: auto;
+            display: flex;
+            height: 500px;
+            padding: 1rem;
+            gap: 1rem;
+            width: 80%;
+
+            .col {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+
+                .row {
+                    border: 1px solid gainsboro;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    span {
+                        font-size: 1.7rem;
+                        color: $whiteClr;
+                    }
+                }
+            }
+
+            .col:first-child {
+                .row:first-child {
+                    height: 40%;
+                    background: url("../../assets/shoes.jpg");
+                    background-size: cover;
+                }
+
+                .row:last-child {
+                    height: 60%;
+                    background: url("../../assets/headwear.jpg");
+                    background-size: cover;
+                }
+            }
+
+            .col:nth-child(2) {
+                .row:first-child {
+                    height: 60%;
+                    background: url("../../assets/jacket.jpg");
+                    background-size: cover;
+                }
+
+                .row:last-child {
+                    height: 40%;
+                    background: url("../../assets/bag.jpg");
+                    background-size: cover;
+                }
+            }
+
+            .col:last-child {
+                .row:first-child {
+                    height: 40%;
+                    background: url("../../assets/accesories.jpg");
+                    background-size: cover;
+                }
+
+                .row:last-child {
+                    height: 60%;
+                    background: url("../../assets/bottom.jpg");
+                    background-size: cover;
+                }
+            }
+
+        }
+    }
 }
 
 // ////////////////////////////////////////////////////////////
@@ -58,6 +144,18 @@
         .right {
             button {
                 width: 100% !important;
+            }
+        }
+    }
+
+    .wrapper {
+        flex-direction: column;
+
+        .col {
+            height: 400px;
+
+            .row {
+                height: 400px !important;
             }
         }
     }

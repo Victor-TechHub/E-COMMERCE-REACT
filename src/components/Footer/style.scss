@@ -1,0 +1,155 @@
+@import "../../styles/utils.scss";
+
+footer {
+    text-align: center;
+    margin: 3% 0 0 0;
+
+    .news_letter {
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(rgba(0, 0, 0, 0.571), rgba(0, 0, 0, 0.719)), url("../../assets/nike.jpg");
+        background-size: cover;
+
+        form {
+            h4 {
+                font-size: 3rem;
+                font-weight: 500;
+                color: $whiteClr;
+            }
+
+            p {
+                color: $whiteClr;
+            }
+
+            .input_field {
+                padding: 1rem;
+                display: flex;
+                // align-items: center;
+                justify-content: center;
+
+                input {
+                    @include TextField;
+                    background: rgba(220, 220, 220, 0.345);
+                    width: 300px;
+                    color: $whiteClr;
+
+                    &::placeholder {
+                        color: $whiteClr
+                    }
+
+                }
+
+                button {
+                    @include Button($whiteClr, $blackClr);
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+
+    .footer {
+        background: $blackClr;
+        color: $whiteClr;
+
+        .row {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-evenly;
+
+            .col {
+                padding: 10px;
+                text-align: left;
+
+                span {
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+
+                ul {
+                    list-style: none;
+                    line-height: 30px;
+                    margin-top: 20%;
+
+                    li {
+                        color: darken($color: $whiteClr, $amount: 20);
+                    }
+                }
+            }
+
+            .col:first-child {
+                text-align: left;
+
+                span {
+                    font-size: 3rem;
+                    font-weight: 500;
+                }
+
+                p {
+                    color: darken($color: $whiteClr, $amount: 20);
+                }
+            }
+
+            .col:last-child {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                ul {
+                    display: flex;
+                    gap: 1.5rem;
+                    margin-top: 0%;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        color: $whiteClr;
+        font-size: 12px;
+        margin-top: 2%;
+        padding: 5px;
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+/* Mobile */
+
+@media screen and (max-width: 550px) {
+    footer {
+        margin-top: 100%;
+
+        form {
+            h4 {
+                font-size: 2.5rem !important;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            .input_field {
+                flex-direction: column;
+                gap: 8px;
+                align-items: center;
+
+                input {
+                    width: 100% !important;
+                }
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
+
+        .row {
+            flex-direction: column;
+
+            ul {
+                margin-top: 2% !important;
+            }
+        }
+    }
+}

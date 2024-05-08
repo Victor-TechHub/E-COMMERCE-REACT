@@ -85,37 +85,3 @@ main {
         transform: translateX(-200%);
     }
 }
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-/* MOBILE VIEW */
-@media screen and (max-width: 550px) {
-    .header {
-
-        .burger {
-            display: block !important;
-        }
-
-        .navigation {
-            background: rgba(255, 255, 255, 0.497);
-            position: absolute;
-            top: 5.5%;
-            width: 60%;
-            height: 94.5dvh;
-            left: 0;
-
-            ul {
-                flex-direction: column;
-            }
-        }
-
-        .left-wrapper {
-            flex-direction: column;
-            margin-top: 2%;
-        }
-    }
-
-    .hero-section {
-        opacity: 0;
-    }
-}
