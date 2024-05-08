@@ -22,9 +22,9 @@ const Navbar = () => {
         <>
             <BackDropComponent open={isOpen} handleClose={handleClick} />
             <main className={`main ${scroll > 0 && window.innerWidth > 550 ? "scrolled" : ""}`}>
-                <div className="disclaimer">
+                {/* <div className="disclaimer">
                     <p className='scroll-text'>New Season Coming! Discount 10% for all products! Check out now <span>20:48</span></p>
-                </div>
+                </div> */}
 
                 <div className={`burger ${window.innerWidth < 600 ? "show" : "hide"} ${scroll > 0 ? "scrolled" : ""}`}
                     onClick={handleClick}>
