@@ -53,9 +53,6 @@ const HomeScreen = () => {
                         <p>Dare to mix and match! Check our collections to level up your fashion game</p>
 
                         <motion.div
-                            variants={ImgContainer}
-                            initial="hidden"
-                            whileInView="show"
                             className="wrapper">
                             <div className="col">
                                 <div className="row">
