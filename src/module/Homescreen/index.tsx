@@ -1,6 +1,3 @@
-import { useQuery } from '@tanstack/react-query'
-import { getProducts } from '../../axios-instance'
-import { queryKeys } from '../../react-query/constants'
 import { motion } from 'framer-motion'
 import Banner from './Banner'
 import Arrivals from './arrivals'
@@ -8,13 +5,14 @@ import Loader from '../../components/Loader'
 import store from "../../assets/store.jpg"
 import "./home.scss"
 import { ImgContainer, detailsContainer } from '../../utils/animation'
-import Footer from '../../components/Footer'
+import { getStore } from '../../hooks/getStore'
+// import { useContext } from 'react'
+// import { AppContext } from '../../context'
 
 const HomeScreen = () => {
-    const { data: productsData, isLoading } = useQuery({
-        queryKey: [queryKeys.PRODUCTS],
-        queryFn: getProducts
-    })
+    // const { allProducts: productsData } = useContext(AppContext)
+    const { data: productsData, isLoading } = getStore()
+    console.log(productsData);
 
     return (
         <div className='mainContainer'>
@@ -83,7 +81,7 @@ const HomeScreen = () => {
                         </motion.div>
                     </section>
 
-                    <Footer />
+                    {/* <Footer /> */}
                 </>
             )}
 

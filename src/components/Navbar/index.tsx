@@ -6,12 +6,12 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseIcon from '@mui/icons-material/Close';
 import "./style.scss"
 import { NavContainer, item } from "../../utils/animation";
-import { useNavScroll } from "../../hooks/useNavScroll";
 import { useState } from "react";
 import BackDropComponent from "../Backdrop";
+import { Link } from "react-router-dom";
+import { PATHS } from "../../routes/path";
 
 const Navbar = () => {
-    const { scroll } = useNavScroll()
     const [isOpen, setIsOpen] = useState(false)
 
     const handleClick = () => {
@@ -21,12 +21,12 @@ const Navbar = () => {
     return (
         <>
             <BackDropComponent open={isOpen} handleClose={handleClick} />
-            <main className={`main ${scroll > 0 && window.innerWidth > 550 ? "scrolled" : ""}`}>
+            <main className={`main ${window.innerWidth <= 600 ? "" : "scrolled"}`}>
                 {/* <div className="disclaimer">
                     <p className='scroll-text'>New Season Coming! Discount 10% for all products! Check out now <span>20:48</span></p>
                 </div> */}
 
-                <div className={`burger ${window.innerWidth < 600 ? "show" : "hide"} ${scroll > 0 ? "scrolled" : ""}`}
+                <div className={`burger ${window.innerWidth < 600 ? "show" : "hide"} scrolled`}
                     onClick={handleClick}>
                     {isOpen ? <CloseIcon style={{ color: "whitesmoke", scale: "1.5", cursor: "pointer" }} /> : <MenuRoundedIcon style={{ cursor: "pointer", color: "whitesmoke", scale: "1.5" }} />}
                 </div>
@@ -38,22 +38,22 @@ const Navbar = () => {
                             initial="hidden"
                             animate="show"
                         >
-                            <motion.li className='logo' variants={item}>Volt</motion.li>
-                            <motion.li variants={item}>Categories</motion.li>
-                            <motion.li variants={item}>Collections</motion.li>
-                            <motion.li variants={item}>Store</motion.li>
-                            <motion.li variants={item}>Blog</motion.li>
-                            <motion.li variants={item}>Find store</motion.li>
+                            <motion.li className='logo' variants={item}><Link to={PATHS.HOME}>Volt</Link></motion.li>
+                            <motion.li variants={item}><Link to={PATHS.CATEGORY}>Categories</Link></motion.li>
+                            <motion.li variants={item}><Link to={PATHS.COLLECTION}>Collections</Link></motion.li>
+                            <motion.li variants={item}><Link to={PATHS.STORE}>Store</Link></motion.li>
+                            <motion.li variants={item}><Link to={PATHS.BLOG}>Blog</Link></motion.li>
+                            <motion.li variants={item}><Link to={PATHS.STORE}>Find store</Link></motion.li>
                         </motion.ul>
                     </nav>
 
                     <motion.div className='left-wrapper' initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
                         <span><SearchIcon /> Search</span>
-                        <span><LocalMallOutlinedIcon /> Cart (0)</span>
-                        <span><AccountCircleOutlinedIcon /> Login</span>
+                        <span><Link to={PATHS.CART}><LocalMallOutlinedIcon /> Cart (0)</Link></span>
+                        <span><Link to={PATHS.LOGIN}><AccountCircleOutlinedIcon /> Login</Link></span>
                     </motion.div>
                 </header>
-            </main>
+            </main >
         </>
 
     )

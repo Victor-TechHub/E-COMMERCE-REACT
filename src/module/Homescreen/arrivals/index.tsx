@@ -3,7 +3,7 @@ import { Products } from "../../../types"
 import "./style.scss"
 
 type Data = {
-    data?: Products[]
+    data: Products[] | undefined
 }
 
 const Arrivals = ({ data }: Data) => {

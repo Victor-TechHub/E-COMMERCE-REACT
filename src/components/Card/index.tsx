@@ -12,6 +12,7 @@ const ProductCard = ({ item }: { item: Products }) => {
     const handleLikedProduct = (): void => {
         setFavourite(!favourite)
     }
+
     return (
         <motion.main
             className="products"
@@ -25,7 +26,7 @@ const ProductCard = ({ item }: { item: Products }) => {
             </div>
             <div className="details">
                 <div className="name">
-                    <span>{item?.title.substring(0, 20)}...</span>
+                    <span>{item?.title}</span>
                     <p>${item?.price.toFixed(2)}</p>
                 </div>
                 <div className="icon">
