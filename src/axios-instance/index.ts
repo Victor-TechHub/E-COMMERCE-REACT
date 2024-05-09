@@ -5,7 +5,7 @@ import { Products } from "../types";
 const config = { baseURL: URL }
 const axiosInstance = Axios.create(config)
 
-export const getProducts = async (): Promise<Products[]> => {
-    const response = await axiosInstance.get("/products")
+export const getProducts = async (page: number): Promise<Products[]> => {
+    const response = await axiosInstance.get(`/products?offset=${page}`)
     return response.data
 }

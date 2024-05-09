@@ -26,4 +26,9 @@ export type Children = {
 export interface getStoreType {
     data: Products[] | undefined,
     isLoading: boolean
+    isStale: boolean
+    nextPage: () => void
+    previousPage: () => void
+    page: number
+    setPage: React.Dispatch<React.SetStateAction<number>>
 }

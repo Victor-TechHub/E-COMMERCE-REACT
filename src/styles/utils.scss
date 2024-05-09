@@ -17,3 +17,11 @@ $blackClr: #1a1818;
     outline: 0;
     background: transparent;
 }
+
+@mixin FlexItem {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 2rem;
+    justify-content: center;
+    gap: 2rem;
+}

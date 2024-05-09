@@ -21,11 +21,7 @@
     }
 
     .items {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 10px 2rem;
-        justify-content: center;
-        gap: 2rem;
+        @include FlexItem
     }
 
     .controls {

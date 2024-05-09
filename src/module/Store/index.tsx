@@ -1,24 +1,28 @@
-import { useContext } from "react"
+import ProductCard from "../../components/Card"
+import Loader from "../../components/Loader"
+import { getStore } from "../../hooks/getStore"
 import "./style.scss"
-import { AppContext } from "../../context"
 
 const Store = () => {
-    const { allProducts } = useContext(AppContext)
+    const { data, isLoading } = getStore()
 
     return (
-        <div style={{ marginTop: "5%" }}>
-            <div className="title">
-                <span>Volt's Store</span>
-
-                <section className="product_listings">
-                    <div> All <p style={{ background: "gainsboro", color: "#333", padding: "5px", borderRadius: "5px", width: "30px", textAlign: "center" }}>{0}</p></div>
-
-                    <div className="products">
-
-                    </div>
-                </section>
-            </div>
-        </div>
+        <>
+            {isLoading ? <Loader loading={isLoading} /> : <div style={{ marginTop: "5%" }}>
+                <div className="banner">
+                    <span>All In Volt's Store</span>
+                    <p>Browse our diverse selection of quality products,<br />
+                        ranging from electronics and fashion to home essentials and more.<br />
+                        Find everything you need conveniently in one place!
+                    </p>
+                </div>
+                <div className="productGrid">
+                    {data?.slice(0, 8).map(item => (
+                        <ProductCard key={item.id} item={item} />
+                    ))}
+                </div>
+            </div>}
+        </>
     )
 }
 
