@@ -6,13 +6,14 @@ import store from "../../assets/store.jpg"
 import "./home.scss"
 import { ImgContainer, detailsContainer } from '../../utils/animation'
 import { getStore } from '../../hooks/getStore'
-// import { useContext } from 'react'
-// import { AppContext } from '../../context'
+import { useContext } from 'react'
+import { AppContext } from '../../context'
 
 const HomeScreen = () => {
-    // const { allProducts: productsData } = useContext(AppContext)
+    const { Data } = useContext(AppContext)
+    console.log(Data);
+
     const { data: productsData, isLoading } = getStore()
-    console.log(productsData);
 
     return (
         <div className='mainContainer'>

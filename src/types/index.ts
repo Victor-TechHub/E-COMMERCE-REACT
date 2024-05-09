@@ -27,24 +27,3 @@ export interface getStoreType {
     data: Products[] | undefined,
     isLoading: boolean
 }
-
-// export interface Products {
-//     product_id: number
-//     name: string
-//     description: string
-//     price: number
-//     unit: string
-//     image: string
-//     discount: number
-//     availability: boolean
-//     brand: string
-//     rating: number
-//     category: string
-//     review: Reviews[]
-// }
-
-// export interface Reviews {
-//     user_id: number
-//     rating: number
-//     comment: string
-// }

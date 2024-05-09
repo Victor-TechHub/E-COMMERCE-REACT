@@ -2,16 +2,22 @@ import { createContext } from "react";
 import { Children, Products } from "../types";
 import { getStore } from "../hooks/getStore";
 
-export const AppContext = createContext<AppContextType | null>(null)
+export const AppContext = createContext<AppContextType | null>({
+    data: undefined
+})
 
 type AppContextType = {
-    allProducts: Products[]
+    data: Products[] | undefined
 }
 
 const AppContextProvider = ({ children }: Children) => {
-    const { data: allProducts } = getStore()
+    const { data: Data } = getStore()
 
-    return <AppContext.Provider value={{ allProducts }}> {children} </AppContext.Provider>
+    const value = {
+        data: Data
+    }
+
+    return <AppContext.Provider value={value}> {children} </AppContext.Provider>
 }
 
 export default AppContextProvider
