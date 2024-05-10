@@ -5,7 +5,7 @@ import "./style.scss"
 import CustomPagination from "../../components/Pagination"
 
 const Store = () => {
-    const { data, isLoading } = getStore()
+    const { data, isLoading, previousPage, nextPage, page } = getStore()
 
     return (
         <>
@@ -18,11 +18,11 @@ const Store = () => {
                     </p>
                 </div>
                 <div className="productGrid">
-                    {data?.slice(0, 8).map(item => (
+                    {data?.map(item => (
                         <ProductCard key={item.id} item={item} />
                     ))}
                 </div>
-                <CustomPagination />
+                <CustomPagination previousPage={previousPage} nextPage={nextPage} page={page} data={data} />
             </div>}
         </>
     )

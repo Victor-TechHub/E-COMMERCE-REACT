@@ -21,5 +21,5 @@ export const getStore = (): getStoreType => {
         setPage(prev => prev - 8)
     }
 
-    return { data, isLoading, isStale, previousPage, nextPage, setPage, page }
+    return { data, isLoading, isStale, previousPage, nextPage, page }
 }

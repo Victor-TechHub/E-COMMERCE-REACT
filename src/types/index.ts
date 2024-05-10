@@ -30,5 +30,4 @@ export interface getStoreType {
     nextPage: () => void
     previousPage: () => void
     page: number
-    setPage: React.Dispatch<React.SetStateAction<number>>
 }

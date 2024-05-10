@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom"
 import ProductCard from "../../../components/Card"
 import { Products } from "../../../types"
 import "./style.scss"
+import { PATHS } from "../../../routes/path"
 
 type Data = {
     data: Products[] | undefined
@@ -19,7 +21,9 @@ const Arrivals = ({ data }: Data) => {
                 ))}
             </div>
             <div className="controls">
-                <button>See All</button>
+                <Link to={PATHS.STORE}>
+                    <button>See All</button>
+                </Link>
             </div>
         </section>
     )

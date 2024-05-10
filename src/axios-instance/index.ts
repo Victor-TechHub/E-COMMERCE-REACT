@@ -6,7 +6,7 @@ const config = { baseURL: URL }
 const axiosInstance = Axios.create(config)
 
 export const getProducts = async (page: number): Promise<Products[]> => {
-    const response = await axiosInstance.get(`/products?offset=${page}`)
+    const response = await axiosInstance.get(`/products?offset=${page}&limit=12`)
     return response.data
 }
 

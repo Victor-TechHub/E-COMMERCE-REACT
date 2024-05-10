@@ -15,37 +15,38 @@ const SingleProduct = () => {
         setImagePreview(index)
     }
     return (
-        <section style={{ marginTop: "6%" }} className="product_container">
-            {isError ? <CustomAlert error={error?.message} /> : null}
-            {
-                isLoading ? <Loader loading={isLoading} /> :
-                    <>
-                        <div className="image_container">
-                            <div className="all_image_wrapper">
-                                {data?.images.map((IMG, i) => (
-                                    <>
-                                        <img src={IMG} alt="Image" key={i} onClick={() => handlePreview(i)} />
-                                    </>
-                                ))}
-                            </div>
-                            <div className="main_image">
-                                <img src={data?.images[imagePreview]} alt="" />
-                                <LikeButton />
-                            </div>
-                        </div>
+        <>
+            {isLoading ? <Loader loading={isLoading} /> :
+                <section style={{ marginTop: "6%" }} className="product_container">
+                    {isError ? <CustomAlert error={error?.message} /> : null}
 
-                        <div className="product_detail_container">
-                            <h3>{data?.title} <span className="categoryName">{data?.category.name}</span></h3>
-                            <p>{data?.description}</p>
-                            <p className="price"> ${data?.price.toFixed(2)}</p>
-                            <div className="action">
-                                <CustomSelect />
-                                <button>ADD TO BAG </button>
-                            </div>
+                    <div className="image_container">
+                        <div className="all_image_wrapper">
+                            {data?.images.map((IMG, i) => (
+                                <>
+                                    <img src={IMG} alt="Image" key={i} onClick={() => handlePreview(i)} />
+                                </>
+                            ))}
                         </div>
-                    </>
-            }
-        </section>
+                        <div className="main_image">
+                            <img src={data?.images[imagePreview]} alt="" />
+                            <LikeButton />
+                        </div>
+                    </div>
+
+                    <div className="product_detail_container">
+                        <h3>{data?.title} <span className="categoryName">{data?.category.name}</span></h3>
+                        <p>{data?.description}</p>
+                        <p className="price"> ${data?.price.toFixed(2)}</p>
+                        <div className="action">
+                            <CustomSelect />
+                            <button>ADD TO BAG </button>
+                        </div>
+                    </div>
+
+                </section>}
+        </>
+
     )
 }
 
