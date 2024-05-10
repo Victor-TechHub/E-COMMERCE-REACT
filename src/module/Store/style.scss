@@ -7,6 +7,7 @@
     width: 100%;
     padding: 5rem;
     color: $whiteClr;
+    margin-top: 5%;
 
     span {
         font-size: 4rem;
@@ -17,4 +18,19 @@
 
 .productGrid {
     @include FlexItem()
+}
+
+/////////////////////////////////////////////
+/* Mobile */
+
+@media screen and (max-width: 550px) {
+    .banner {
+        height: 100dvh;
+        margin-top: 0;
+
+        span {
+            font-size: 6rem;
+
+        }
+    }
 }

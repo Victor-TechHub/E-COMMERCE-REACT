@@ -1,0 +1,13 @@
+@import "../../styles/utils.scss";
+
+i {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    background: $whiteClr;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

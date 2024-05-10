@@ -1,8 +1,14 @@
+import { Pagination } from '@mui/material';
+import { getStore } from '../../hooks/getStore';
+import "./style.scss"
 
-const Pagination = () => {
+const CustomPagination = () => {
+    const { data } = getStore()
     return (
-        <div>Pagination</div>
+        <div id='pagination'>
+            <Pagination count={data?.length} shape="rounded" />
+        </div>
     )
 }
 
-export default Pagination
+export default CustomPagination

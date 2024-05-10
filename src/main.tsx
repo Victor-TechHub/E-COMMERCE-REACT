@@ -14,6 +14,7 @@ import Collection from './module/Collection/index.tsx'
 import Login from './module/Login/index.tsx'
 import Store from './module/Store/index.tsx'
 import AppContextProvider from './context/index.tsx'
+import SingleProduct from './module/SingleProduct/index.tsx'
 
 const routes = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const routes = createBrowserRouter([
       { path: PATHS.COLLECTION, element: <Collection /> },
       { path: PATHS.LOGIN, element: <Login /> },
       { path: PATHS.STORE, element: <Store /> },
+      { path: "/products/:id", element: <SingleProduct /> },
     ] as RouteObject[]
   }
 ])

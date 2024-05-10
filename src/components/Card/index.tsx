@@ -1,17 +1,13 @@
 import { Products } from "../../types"
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { motion } from "framer-motion"
 import "./style.scss"
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import LikeButton from "../LikeButton";
+// import { PATHS } from "../../routes/path";
 
 const ProductCard = ({ item }: { item: Products }) => {
-    const [favourite, setFavourite] = useState(false)
 
-    const handleLikedProduct = (): void => {
-        setFavourite(!favourite)
-    }
 
     return (
         <motion.main
@@ -21,8 +17,11 @@ const ProductCard = ({ item }: { item: Products }) => {
             transition={{ ease: "linear", type: "spring", stiffness: 200 }}
         >
             <div className="card">
-                <i onClick={handleLikedProduct}> {favourite ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon />}</i>
-                <img src={item?.images[0]} alt={item?.title} />
+                <LikeButton />
+                <Link to={`/products/${item.id}`}>
+                    <img src={item?.images[0]} alt={item?.title} />
+                </Link>
+
             </div>
             <div className="details">
                 <div className="name">

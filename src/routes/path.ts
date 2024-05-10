@@ -5,5 +5,5 @@ export const PATHS = {
     COLLECTION: "/collection",
     STORE: "/store",
     BLOG: "/blog",
-    LOGIN: "/login"
+    LOGIN: "/login",
 }

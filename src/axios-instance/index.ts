@@ -9,3 +9,8 @@ export const getProducts = async (page: number): Promise<Products[]> => {
     const response = await axiosInstance.get(`/products?offset=${page}`)
     return response.data
 }
+
+export const getSingleProduct = async (id: string | undefined): Promise<Products> => {
+    const response = await axiosInstance.get(`/products/${id}`)
+    return response.data
+}

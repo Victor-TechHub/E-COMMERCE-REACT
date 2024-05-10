@@ -7,7 +7,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import "./style.scss"
 import { NavContainer, item } from "../../utils/animation";
 import { useState } from "react";
-import BackDropComponent from "../Backdrop";
 import { Link } from "react-router-dom";
 import { PATHS } from "../../routes/path";
 
@@ -20,7 +19,6 @@ const Navbar = () => {
 
     return (
         <>
-            <BackDropComponent open={isOpen} handleClose={handleClick} />
             <main className={`main ${window.innerWidth <= 600 ? "" : "scrolled"}`}>
                 {/* <div className="disclaimer">
                     <p className='scroll-text'>New Season Coming! Discount 10% for all products! Check out now <span>20:48</span></p>
@@ -28,7 +26,16 @@ const Navbar = () => {
 
                 <div className={`burger ${window.innerWidth < 600 ? "show" : "hide"} scrolled`}
                     onClick={handleClick}>
-                    {isOpen ? <CloseIcon style={{ color: "whitesmoke", scale: "1.5", cursor: "pointer" }} /> : <MenuRoundedIcon style={{ cursor: "pointer", color: "whitesmoke", scale: "1.5" }} />}
+                    <div>
+                        {isOpen
+                            ? <CloseIcon style={{ color: "whitesmoke", scale: "1.5", cursor: "pointer" }} />
+                            : <MenuRoundedIcon style={{ cursor: "pointer", color: "whitesmoke", scale: "1.5" }} />}
+                    </div>
+
+                    <div>
+                        <div className='logo'><Link to={PATHS.HOME}>Volt</Link></div>
+
+                    </div>
                 </div>
 
                 <header className={`${isOpen ? "header" : "header hide"}`}>

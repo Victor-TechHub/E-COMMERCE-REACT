@@ -1,4 +1,5 @@
 export const queryKeys = {
     CATEGORIES: "categories",
-    PRODUCTS: "products"
+    PRODUCTS: "products",
+    SINGLEPRODUCT: "singleProduct"
 }

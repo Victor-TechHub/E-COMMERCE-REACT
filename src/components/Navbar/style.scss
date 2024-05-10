@@ -2,7 +2,7 @@
 
 .main {
     position: fixed;
-    width: 100%;
+    // width: 100%;
     top: 0;
     height: fit-content;
     z-index: 1;
@@ -50,6 +50,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 1.5rem;
+        width: 100dvw;
         height: 10dvh;
         // background: white;
 
@@ -116,16 +117,27 @@
 
 @media screen and (max-width: 550px) {
     .main {
-        z-index: 9999;
+        z-index: 3;
+        // width: 0;
 
         .burger {
-            display: block !important;
+            display: flex !important;
+            justify-content: space-between;
+            grid-area: 10px;
+            align-items: center;
             position: absolute;
             top: 0px;
             padding: 10px;
-            width: 100dvw;
+            width: 100%;
+            padding: 10px;
             z-index: 2;
             transition: 1s;
+
+            a {
+                color: $whiteClr;
+                text-decoration: none;
+                font-size: 2rem;
+            }
 
             &.scrolled {
                 background: rgba(162, 159, 159, 0.685);
@@ -141,20 +153,28 @@
             height: 100dvh !important;
             background: rgba(162, 159, 159, 0.685);
             backdrop-filter: blur(5px);
-            width: 60%;
             transition: .3s;
+            width: 60dvw;
             transform: translateY(0);
             opacity: 1;
-            z-index: 10000;
 
             &.hide {
                 transform: translateX(-100%);
                 opacity: 0;
+                width: 0;
             }
 
             .navigation {
+
+
                 ul {
                     flex-direction: column !important;
+
+                    .logo {
+                        a {
+                            opacity: 999;
+                        }
+                    }
                 }
             }
 
